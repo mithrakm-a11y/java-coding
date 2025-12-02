@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+
+        int count = 0;
+        boolean balanced = true;
+
+        for (char c : s.toCharArray())
+        {
+            if (c == '(')
+            {
+                count++;
+            } 
+                else if (c == ')')
+            {
+                count--;
+                if (count < 0) 
+                { 
+                    balanced = false;
+                    break;
+                }
+            } else {
+                balanced = false; 
+                break;
+            }
+        }
+
+        if (count != 0) balanced = false; 
+
+        System.out.println(balanced ? "yes" : "no");
+    }
+}
