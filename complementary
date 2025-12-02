@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class complementary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        boolean[] seen = new boolean[26];
+        int count = 0;
+
+        String combined = s1 + s2;
+
+        for (int i = 0; i < combined.length(); i++) {
+            char c = combined.charAt(i);
+
+            if (c < 'A' || c > 'Z') {
+                System.out.println("no");
+                return;
+            }
+
+            int index = c - 'A';
+
+            if (seen[index]) {  
+                System.out.println("no");
+                return;
+            }
+
+            seen[index] = true;
+            count++;
+        }
+
+       
+        if (count == 26) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+    }
+}

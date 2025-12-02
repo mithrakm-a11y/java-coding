@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class lcmwithoutgcd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+
+        for (int i = 0; i < N; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        long lcm = arr[0];
+
+        for (int i = 1; i < N; i++) {
+            lcm = lcmOfTwo(lcm, arr[i]);
+        }
+
+        System.out.println(lcm);
+    }
+
+    
+    public static long lcmOfTwo(long a, long b) {
+        long lcm = Math.max(a, b);
+
+        while (true) {
+            if (lcm % a == 0 && lcm % b == 0) {
+                return lcm;
+            }
+            lcm += Math.max(a, b); 
+        }
+    }
+}
