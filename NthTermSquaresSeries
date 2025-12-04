@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        if (!sc.hasNextInt()) {
+            System.out.println("Error");
+            return;
+        }
+
+        int N = sc.nextInt();
+
+       
+        if (N < 0) 
+        {
+            System.out.println("Error");
+        } 
+        else if (N == 0)
+        {
+            System.out.println(0);
+        } 
+        else 
+        {
+            long result = (long) N * (long) N;  
+            System.out.println(result);
+        }
+    }
+}

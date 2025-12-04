@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double A = sc.nextDouble();
+        double B = sc.nextDouble();
+        double C = sc.nextDouble();
+
+        double largest = Math.max(A, Math.max(B, C));
+
+        if (largest == (int)largest) {
+            System.out.println((int)largest);
+        } else {
+            System.out.println(largest);
+        }
+
+        sc.close();
+    }
+}
